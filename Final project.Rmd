@@ -1,0 +1,31 @@
+---
+title: "Final project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyr)
+library(tidyverse)
+library(readxl)
+```
+
+Every May millions of Europeans gather around their televisions to watch one of the biggest television spectacles and to partake in the cultural phenomenon that has shaped european relations since the fifites. The Eurovision song contest is held every year. Each of the 50 countries that participate send an artist or group to perform an original song. The result is a weeklong celebration of unity, peace, and cooperation, but also (maybe more importantly), sequins, wind machines, and outrageous musical performances. 
+
+To determine a winner, votes are cast by a jusry comprised of ... and the voted sent in by all the people at home. The only rule is that you cannot vote for your own country. This creates more drama in the competition, but is music the only thing affecting the votes cast by other countries?
+
+Every year you hear people speak of the Nordic block, or the Baltic countries banding together. Is there a corrlation between countries close to each other and the amount of votes they give each other? 
+In this tutorial we will examine the voting data from 1975 - 2018 to see if the music is the only determining factor in the decision on what country wins. 
+
+First we will import the voting data and examine the data it gives us.
+```{r data_prep}
+
+eurovision <- read_excel("/Users/Astrid/Downloads/eurovision_song_contest_1975_2018v2.xlsx")
+countries <- read_csv("/Users/Astrid/Downloads/country_centroids_az8.csv")
+
+head(eurovision)
+```
+
+Here we see the 6 first rows in our dataset. 
+Some observations we can make:
+ - The data shows us the amount of points 
