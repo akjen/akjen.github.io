@@ -15,7 +15,7 @@ include=FALSE
 ```
 
 
-Every May, millions of Europeans gather around their televisions to watch one of the worlds biggest spectacles and to partake in the cultural phenomenon that has shaped European relations since the fifites. The Eurovision song contest is held every year. Each of the 50 countries that participate send an artist or group to perform an original song. The result is a weeklong celebration of unity, peace, and cooperation. But also (maybe more importantly), a celebration of sequins, wind machines, and outrageous musical performances. You can read more about it [here](https://www.buzzfeed.com/ellievhall/everything-americans-need-to-know-about-eurovision) and [here](https://eurovision.tv/).
+Every May, millions of Europeans gather around their televisions to watch one of the worlds biggest spectacles and to partake in the cultural phenomenon that has shaped European relations since the fifites. The Eurovision Song Contest is held every year. Each of the 50 countries that participate send an artist or group to perform an original song. The result is a weeklong celebration of unity, peace, and cooperation. But also (maybe more importantly), a celebration of sequins, wind machines, and outrageous musical performances. You can read more about it [here](https://www.buzzfeed.com/ellievhall/everything-americans-need-to-know-about-eurovision) and [here](https://eurovision.tv/).
 
 !["hit.com.au"](/Users/Astrid/Documents/UMD/CMSC/CMSC320/Project 2 CMSC320/eurovision pic.jpg)
 
@@ -111,7 +111,7 @@ eurovision$To_Latitude <- as.numeric(eurovision$To_Latitude)
 head(eurovision)
 ```
 
-  - Now that we have longitude and latitude information for both to- and from-countries, we can create a column that measures the distance between the center of the countries. Here we will use the funtion 'distHaversine' in order to measure the distance between two coordinates, taking into account the curvature of the earth and other important factors.
+  - Now that we have longitude and latitude information for both to- and from-countries, we can create a column that measures the distance between the center of the countries. Here we will use the funtion 'distHaversine' in order to measure the distance between two coordinates, taking into account the curvature of the earth and other important factors. There is more information on this [here](https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/).
   
 ```{r tidying3, message=FALSE}
 library(data.table)
@@ -261,7 +261,7 @@ standardized_euro %>%
   labs(title = "Distance vs Point values", x= "z - Distance", y="z-Point values")
 ```
 
-This information does not look good for our hypothesis. It looks like distance does not have a large effect on hom many points countries give to each other, most of the points are even centered where the distance and point scores both are low. The fairly horizontal regrssion lines show us that the average distance between points remains fairly similar despite the distance. 
+This information does not look good for our hypothesis. It looks like distance does not have a large effect on how many points countries give to each other, most of the points are even centered where the distance and point scores both are low. The fairly horizontal regrssion lines show us that the average distance between points remains fairly similar despite the distance. 
 
 * To learn more about the data, we'll narrow down our scope:
     - We'll extract the relationships with the maximum number of votes per to-country. This will give us information about the most frequently used voting channels.
